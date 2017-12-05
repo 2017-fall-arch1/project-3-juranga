@@ -138,16 +138,16 @@ void moveBall(Layer *ball, Vec2 *velocity, Vec2 *upRight, Layer *player1, Layer 
   if (ball->pos.axes[0] <= 4) {
     scoreboard[4] = '0' + (p2Score+1);
     p2Score += 1;
-    drawString5x7(screenWidth/2-15,20, scoreboard, COLOR_GREEN, COLOR_BLUE);
-    __delay_cycles(2 * 16000000);
+    buzzer_set_period(2500);
+    //drawString5x7(screenWidth/2-15,20, scoreboard, COLOR_GREEN, COLOR_BLUE);
     states_init();
   }
   /* Handles Score if P1 Scores */
   if (ball->pos.axes[0] >= screenWidth - 4) {
     scoreboard[0] = '0' + (p1Score+1);
     p1Score += 1;
-    drawString5x7(screenWidth/2-15,20, scoreboard, COLOR_GREEN, COLOR_BLUE);
-    __delay_cycles(2 * 16000000);
+    buzzer_set_period(2500);
+    //drawString5x7(screenWidth/2-15,20, scoreboard, COLOR_GREEN, COLOR_BLUE);
     states_init();
   }
   
