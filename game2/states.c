@@ -145,13 +145,13 @@ void moveBall(Layer *ball, Vec2 *velocity, Vec2 *upRight, Layer *player1, Layer 
   if (ball->pos.axes[0] == player1->pos.axes[0]+6) {
     if (ball->pos.axes[1] >= player1->pos.axes[1]+3 && ball->pos.axes[1] < player1->pos.axes[1]+13) {
       velocity->axes[0] *= -1;
-      //buzzer_set_period(3400);
+      buzzer_set_period(3400);
       if (velocity->axes[1] < 0)
 	velocity->axes[1] = -(velocity->axes[1]);
     }
     else if (ball->pos.axes[1] >= player1->pos.axes[1]-12 && ball->pos.axes[1] < player1->pos.axes[1]+3) {
       velocity->axes[0] *= -1;
-      //buzzer_set_period(3400);
+      buzzer_set_period(3400);
       if ((velocity->axes[1]) > 0)
 	velocity->axes[1] = -(velocity->axes[1]);
     }
@@ -160,13 +160,13 @@ void moveBall(Layer *ball, Vec2 *velocity, Vec2 *upRight, Layer *player1, Layer 
   else if (ball->pos.axes[0] == player2->pos.axes[0]-6) {
     if (ball->pos.axes[1] >= player2->pos.axes[1]+3 && ball->pos.axes[1] < player2->pos.axes[1]+13) {
       velocity->axes[0] *= -1;
-      //buzzer_set_period(3400);
+      buzzer_set_period(3400);
       if (velocity->axes[1] < 0)
 	velocity->axes[1] = -(velocity->axes[1]);
     }
     else if (ball->pos.axes[1] >= player2->pos.axes[1]-12 && ball->pos.axes[1] < player2->pos.axes[1]+3) {
       velocity->axes[0] *= -1;
-      //buzzer_set_period(3400);
+      buzzer_set_period(3400);
       if (velocity->axes[1] >0)
 	velocity->axes[1] = velocity->axes[1];
     }
@@ -175,7 +175,7 @@ void moveBall(Layer *ball, Vec2 *velocity, Vec2 *upRight, Layer *player1, Layer 
   if (ball->pos.axes[0] <= 4) {
     scoreboard[4] = '0' + (p2Score+1);
     p2Score += 1;
-    //buzzer_set_period(2500);
+    buzzer_set_period(2500);
     //states_init();
     restart(velocity, &Ball, &Player1, &Player2);
     layerDraw(&Field);
@@ -187,7 +187,7 @@ void moveBall(Layer *ball, Vec2 *velocity, Vec2 *upRight, Layer *player1, Layer 
     and_sr(~8);
     scoreboard[0] = '0' + (p1Score+1);
     p1Score += 1;
-    //buzzer_set_period(2500);
+    buzzer_set_period(2500);
     //states_init();
     restart(velocity, &Ball, &Player1, &Player2);
     //layerDraw(&Field);
