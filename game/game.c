@@ -16,8 +16,4 @@ int main() {
   states_init();
   //lcd_init();
   or_sr(0x8);
-
-  while(1) {
-    switch_interrupt_handler();
-  }
 }
